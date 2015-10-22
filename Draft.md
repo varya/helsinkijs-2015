@@ -65,6 +65,10 @@
 Slatkin from Google.
 * [A Live Intro to Gemini Visual Regression Testing](https://youtu.be/joADgrvvrYM)
 
+### Texts
+
+[Wraith discussion and YCombinator](https://news.ycombinator.com/item?id=6135447)
+
 ## Ideas
 
 ### Testing
