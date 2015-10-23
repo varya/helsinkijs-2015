@@ -102,6 +102,54 @@ style: |
 ## Chasing after the bugs
 {: .shout }
 
+## Testings
+{: .testings }
+
+* performance testing
+* stress testing
+* conformance testing
+* acceptane testing
+* smoke testing
+* regression testing
+* white box testing
+* functional testing
+* system testing
+* black box testing
+* load testing
+* compatibility testing
+* unit testing
+{: .cloud }
+
+<style>
+.testings .slide__body {
+    text-align: center;
+}
+.testings .cloud {
+    display: inline;
+    list-style-type: none;
+}
+.testings .cloud li {
+    list-style: none;
+    display: inline;
+}
+.testings .cloud li::before {
+    content: "";
+}
+
+/* Random sizes */
+
+.testings .cloud li:nth-of-type(3n + 1) {
+    font-size: 1.25em;
+}
+.testings .cloud li:nth-of-type(4n+3) {
+    font-size: 1.5em;
+}
+.testings .cloud li:nth-of-type(5n - 3) {
+    font-size: 1em;
+}
+
+</style>
+
 ## Visual regression testing
 {: .shout}
 
