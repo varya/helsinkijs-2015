@@ -98,3 +98,31 @@ style: |
   color: #000;
 }
 </style>
+
+## Chasing after the bugs
+{: .shout }
+
+## Visual regression testing
+{: .shout}
+
+## Right way to use
+{: .shout}
+
+## The package
+{: .shout}
+
+## Psycological effects
+{: .shout}
+
+## Business perspective
+{: .shout}
+
+## The way to go
+{: .shout}
+
+## Future plans and so on
+
+## Materials
+{: .shout}
+
+## Final slide

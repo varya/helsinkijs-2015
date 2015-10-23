@@ -34,6 +34,12 @@
       You care only about things you care about
    1. Test the behavior
       Drive UI with JS events like in Selenium.
+1. Where to apply
+   If you could not get some practises, now you can
+   1. Continuous deployment
+      Doing impossible 50 times a day (article)
+   1. Huge changes
+   1. Removing code
 1. Psycology
    1. Problems
       Devs must be accurate but nothing checks it. Code review does not help.
@@ -46,12 +52,6 @@
    1. Empowers junior engineers to do more
       And not junior as well.
       We all are bravier and so more productive.
-1. Where to apply
-   If you could not get some practises, now you can
-   1. Continuous deployment
-      Doing impossible 50 times a day (article)
-   1. Huge changes
-   1. Removing code
 1. Business perspective
 1. Conclusion
    1. Plans for future
