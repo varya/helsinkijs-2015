@@ -105,11 +105,42 @@ style: |
 ## Visual regression testing
 {: .shout}
 
+## Perceptual diffs
+
+The general idea
+
+## Examples of bugs to find
+
 ## Right way to use
 {: .shout}
 
+## Atomic approach
+
+## Pull request with an image
+
 ## The package
 {: .shout}
+
+## SC5 Style Guide addition
+
+```
+npm install sc5-styleguide-visualtest
+```
+
+## Gulp compatible
+
+## The development flow
+
+## Real life examples of usage
+
+At Elisa
+
+## Apply for:
+The practises you did not dare to use
+
+1. Continious intergration
+1. Continious deployment
+1. Removing code
 
 ## Psycological effects
 {: .shout}
@@ -117,10 +148,18 @@ style: |
 ## Business perspective
 {: .shout}
 
+## Making money out of it
+
+* Sell styleguide
+
 ## The way to go
 {: .shout}
 
 ## Future plans and so on
+
+1. Trying out different diff comparing tools
+1. Different window sizes
+1. By the feedback
 
 ## Materials
 {: .shout}
