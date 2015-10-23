@@ -150,38 +150,221 @@ style: |
 
 </style>
 
+## Customer context
+
+Does my website makes sense for the customer right now?
+
 ## Visual regression testing
 {: .shout}
 
 ## Perceptual diffs
 
-The general idea
+1. Take reference screenshots
+1. Provide changes to the local copy
+1. Take local copy screenshots
+1. Compare with image diff
 
-## Examples of bugs to find
+## Before and after
+{: .before-after .no-title }
+
+![](pictures/idea-example/chrome~ref.png){: .before }
+![](pictures/idea-example/chrome~current.png){: .after }
+
+<style>
+.before-after .before {
+    width: 45%;
+}
+.before-after .after {
+    width: 45%;
+}
+</style>
+
+## Diff
+{: .per-diff .no-title }
+
+<iframe src="pictures/idea-example/chrome~diff.png" class="diff"></iframe>
+
+<style>
+
+.per-diff>div {
+    padding: 0;
+    width: 100%;
+}
+.per-diff::before,
+.per-diff::after {
+    content: "";
+    display: none;
+}
+
+.per-diff .diff {
+    width: 100%;
+    height: 650px;
+}
+</style>
 
 ## Right way to use
 {: .shout}
 
+## What a little margin can do
+{: .before-after .no-title }
+
+![](pictures/margin-shift/chrome~ref.png){: .before }
+![](pictures/margin-shift/chrome~current.png){: .after }
+
+## Big diff
+{: .per-diff .no-title }
+
+<iframe src="pictures/margin-shift/chrome~diff.png" class="diff"></iframe>
+
+## Impressive <span class="next useless">And useless<span>
+{: .shout .impressive}
+
+<style>
+.impressive .useless.active {
+}
+</style>
+
 ## Atomic approach
 
+Visual regression testing not for whole pages but for isolated components
+gives better understanding of what actually happened.
+
+<!-- todo: formulate better -->
+
+## Button sizes
+
+## Wrong margin
+
+## Missing icon font
+
+## Affected colors
+
+## Unwanted typography changes
+
 ## Pull request with an image
+
+<!-- todo: screenshot of elisa's repo -->
+
+## SC5 Style Guide
+
+Informative and easily navigable live style guide which
+**renders every component separately**.
+
+Can we benefit from it?
 
 ## The package
 {: .shout}
 
 ## SC5 Style Guide addition
+{: .npm-package }
 
 ```
 npm install sc5-styleguide-visualtest
 ```
 
-## Gulp compatible
+![](/pictures/github-octocat.svg){: .github }
+![](/pictures/npm-logo.svg){: .npm }
+![](/pictures/gulp-logo.svg){: .gulp }
+
+<style>
+
+.npm-package .slide__body {
+    text-align: center;
+}
+
+.npm-package .github,
+.npm-package .npm,
+.npm-package .gulp {
+    margin: 0 1.5em;
+}
+.npm-package .github {
+    width: 125px;
+    height: 130px;
+}
+.npm-package .npm {
+    width: 187px;
+    height: 73px;
+}
+.npm-package .gulp {
+    width: 87px;
+    height: 193px;
+}
+
+</style>
+
+## Take reference screenhots
+
+    var sc5StyleguideGemini = require('sc5-styleguide-visualtest');
+
+    gulp.task("test:visual:update", function() {
+    gulp.src('path/to/styleguide/outpurDir', { read: false })
+        .pipe(sc5StyleguideGemini.gather({
+        configDir: './tests/visual/config', // Path to configuration and tests
+        gridScreenshotsDir: './tests/visual/grid-screenshots',
+        rootUrl: 'http://mycompany.com/styleguide',
+        ...
+        }));
+    });
+
+## Compare with the local copy
+
+
+    gulp.task("visual:test", function(done){
+      gulp.src(styleGuidePath, { read: false })
+        .pipe(sc5StyleguideGemini.test({
+        configDir: './tests/visual/config',
+        gridScreenshotsDir: './tests/visual/grid-screenshots',
+        rootUrl: 'http://127.0.0.1:8000/#',
+        sections: options.section
+        }));
+    });
+
+## Console report
+
+![](pictures/console-report.png)
+
+## Human friendly report
+
+```
+open gemini-report/index.html
+```
+
+<!-- todo: more about human friendlt report -->
 
 ## The development flow
+{: .shout }
+
+## When refactoring
+
+### Test particular component
+```
+> gulp test:visual --section 7.3.4 --section 8.5
+```
+
+### Test all
+```
+> gulp test:visual
+```
+
+## When making new
+
+### Update one component refence
+
+```
+> gulp test:visual:update --section 8.5 --from local
+```
+
+### Update all from production
+```
+> gulp test:visual:update
+```
 
 ## Real life examples of usage
 
-At Elisa
+1. Missing icon font <span class="next">(sad story)</span>
+1. Changing font linking
+1. Typograhy affection
+1. ...
 
 ## Apply for:
 The practises you did not dare to use
@@ -190,24 +373,39 @@ The practises you did not dare to use
 1. Continious deployment
 1. Removing code
 
-## Psycological effects
+## Psycology
 {: .shout}
 
-## Business perspective
+## Insuarance
+
+Devs must be accurate but nothing checks the result. Code review does not help, it
+is also made by a human.
+
+###With visual regression testing
+
+* We feel safier
+* We are bravier
+* Even a junior dev can experiment
+
+## Business
 {: .shout}
 
 ## Making money out of it
 
-* Sell styleguide
+* Sell style guide approach and tool
+* Provide very stable UI
+* Work faster and do more
 
 ## The way to go
 {: .shout}
 
 ## Future plans and so on
 
-1. Trying out different diff comparing tools
-1. Different window sizes
-1. By the feedback
+* Trying out different diff comparing tools
+* Different window sizes<br/>
+  aka, desktop, tablet, mobile
+* Post in SC5 blog
+* Open source
 
 ## Materials
 {: .shout}
