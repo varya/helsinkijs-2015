@@ -78,7 +78,7 @@ style: |
     }
 ---
 
-# Test Visual {#Cover}
+# Visual regression {#Cover}
 
 <div class="main-logo__wrapper">
     <object class="main-logo" data="themes/sc5/images/logo.min.svg#white" type="image/svg+xml"></object>
@@ -90,12 +90,17 @@ style: |
 <style>
 
 #Cover {
-  background-image:url('pictures/vision.jpg');
+  background-image:url('pictures/cover.jpg');
   background-size: cover;
 }
 
 #Cover h2 {
-  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  text-shadow: 7px 3px 7px rgba(0,0,0,0.5);
+  font-size: 1.75em;
+  margin: 0;
+  margin-left: 450px;
+  text-align: right;
+  width: 420px;
 }
 #Cover h3 {
   color: white;
@@ -174,6 +179,10 @@ style: |
     margin-top: 1.75em;
 }
 </style>
+
+## Spot the difference
+
+![](pictures/spot-difference.png)
 
 ## Visual regression
 {: .shout}
