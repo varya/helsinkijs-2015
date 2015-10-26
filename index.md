@@ -56,6 +56,17 @@ style: |
     .slide ul li {
       text-indent: -1em;
     }
+    .slide pre {
+        background-color: #efefef;
+        padding: 15px;
+    }
+    .slide pre code {
+        line-height: 1.5em;
+        font-size: 26px;
+    }
+    .slide pre code:before {
+        content: "";
+    }
     .shout.slide {
       background-color: #ef4942;
     }
@@ -99,7 +110,7 @@ style: |
 }
 </style>
 
-## Chasing after the bugs
+## Bug hunt
 {: .shout }
 
 ## Testings
@@ -151,10 +162,20 @@ style: |
 </style>
 
 ## Customer context
+{: .customer-context }
 
-Does my website makes sense for the customer right now?
+###Does my website makes sense for the customer right now?
+{: .question }
 
-## Visual regression testing
+<style>
+.customer-context .question {
+    font-size: 62px;
+    color: #ef4942;
+    margin-top: 1.75em;
+}
+</style>
+
+## Visual regression
 {: .shout}
 
 ## Perceptual diffs
@@ -182,13 +203,15 @@ Does my website makes sense for the customer right now?
 ## Diff
 {: .per-diff .no-title }
 
-<iframe src="pictures/idea-example/chrome~diff.png" class="diff"></iframe>
+![](pictures/idea-example/chrome~diff.png){: .pic }
 
 <style>
+.per-diff .pic {
+    width: 100%;
+}
 
 .per-diff>div {
-    padding: 0;
-    width: 100%;
+    overflow-y: scroll;
 }
 .per-diff::before,
 .per-diff::after {
@@ -196,10 +219,6 @@ Does my website makes sense for the customer right now?
     display: none;
 }
 
-.per-diff .diff {
-    width: 100%;
-    height: 650px;
-}
 </style>
 
 ## Right way to use
@@ -214,7 +233,7 @@ Does my website makes sense for the customer right now?
 ## Big diff
 {: .per-diff .no-title }
 
-<iframe src="pictures/margin-shift/chrome~diff.png" class="diff"></iframe>
+![](pictures/margin-shift/chrome~diff.png){: .pic }
 
 ## Impressive <span class="next useless">And useless<span>
 {: .shout .impressive}
@@ -233,24 +252,140 @@ gives better understanding of what actually happened.
 
 ## Button sizes
 
-## Wrong margin
+![](pictures/atomic-diffs/button-size/chrome~ref.png)
 
-## Missing icon font
+![](pictures/atomic-diffs/button-size/chrome~current.png)
+
+![](pictures/atomic-diffs/button-size/chrome~diff.png)
+{: .next }
+
+## Wrong margin
+{: .wrong-margin }
+
+![](pictures/atomic-diffs/margin/chrome~ref.png){: .pic }
+
+![](pictures/atomic-diffs/margin/chrome~current.png){: .pic }
+
+<style>
+.wrong-margin p {
+    margin: 0;
+}
+.wrong-margin .pic {
+    width: 620px;
+}
+</style>
+
+## Wrong margin
+{: .wrong-margin }
+
+![](pictures/atomic-diffs/margin/chrome~diff.png){: .pic }
+
+## Icons
+
+### Missing icon font
+![](pictures/atomic-diffs/icon-font/chrome~ref.png)
+![](pictures/atomic-diffs/icon-font/chrome~current.png)
+![](pictures/atomic-diffs/icon-font/chrome~diff.png)
+
+<div class="next" markdown="1">
+### Wrong icon
+
+![](pictures/atomic-diffs/wrong-icon/chrome~ref.png)
+![](pictures/atomic-diffs/wrong-icon/chrome~current.png)
+![](pictures/atomic-diffs/wrong-icon/chrome~diff.png){: .next }
+</div>
 
 ## Affected colors
+{: .affected-colors }
 
-## Unwanted typography changes
+![](pictures/atomic-diffs/affected-color/chrome~ref.png){: .pic}
 
-## Pull request with an image
+![](pictures/atomic-diffs/affected-color/chrome~current.png){: .pic }
 
-<!-- todo: screenshot of elisa's repo -->
+![](pictures/atomic-diffs/affected-color/chrome~diff.png){: .pic .next }
+
+<style>
+.affected-colors .pic {
+    width: 100%;
+}
+</style>
+
+## Typography
+{: .typography }
+
+### before
+{: .subtitle }
+
+![](pictures/atomic-diffs/typography/chrome~ref.png){: .pic}
+
+<style>
+.typography .pic {
+    width: 100%;
+}
+</style>
+
+## Typography
+{: .typography }
+
+### after
+{: .subtitle }
+
+![](pictures/atomic-diffs/typography/chrome~current.png){: .pic}
+
+## Typography
+{: .typography }
+
+### difference
+{: .subtitle }
+
+![](pictures/atomic-diffs/typography/chrome~diff.png){: .pic}
+
+## Typography
+{: .typography-details }
+
+### affection onto components
+{: .subtitle }
+
+![](pictures/atomic-diffs/typography-details/chrome~ref.png){: .pic }
+![](pictures/atomic-diffs/typography-details/chrome~current.png){: .pic }
+![](pictures/atomic-diffs/typography-details/chrome~diff.png){: .pic .next }
+
+<style>
+.typography-details .pic {
+    width: 32%;
+}
+</style>
+
+## Pictorial pull request
+{: .pull-request }
+
+![](pictures/pull-request.png){: .pic }
+
+<style>
+.pull-request>div {
+    overflow-y: scroll;
+}
+.pull-request .pic {
+    width: 100%;
+}
+</style>
 
 ## SC5 Style Guide
+{: .style-guide }
 
 Informative and easily navigable live style guide which
 **renders every component separately**.
 
-Can we benefit from it?
+### Wonderful for perceptual diffs!
+{: .wonderful .next }
+
+<style>
+.style-guide .wonderful {
+    font: 52px/1.4 'Lora',sans-serif;
+    color: #ef4942;
+    font-style: italic;
+}
+</style>
 
 ## The package
 {: .shout}
@@ -292,34 +427,29 @@ npm install sc5-styleguide-visualtest
 
 </style>
 
-## Take reference screenhots
+## Take reference pics
 
-    var sc5StyleguideGemini = require('sc5-styleguide-visualtest');
+    var visTest = require('sc5-styleguide-visualtest');
 
     gulp.task("test:visual:update", function() {
-    gulp.src('path/to/styleguide/outpurDir', { read: false })
-        .pipe(sc5StyleguideGemini.gather({
-        configDir: './tests/visual/config', // Path to configuration and tests
-        gridScreenshotsDir: './tests/visual/grid-screenshots',
-        rootUrl: 'http://mycompany.com/styleguide',
-        ...
+      gulp.src('path/to/styleguide', { read: false })
+        .pipe(visTest.gather({
+          // configuration params
         }));
     });
 
-## Compare with the local copy
+## Current state test
 
-
-    gulp.task("visual:test", function(done){
+    gulp.task("visual:test", function(done) {
       gulp.src(styleGuidePath, { read: false })
-        .pipe(sc5StyleguideGemini.test({
-        configDir: './tests/visual/config',
-        gridScreenshotsDir: './tests/visual/grid-screenshots',
-        rootUrl: 'http://127.0.0.1:8000/#',
-        sections: options.section
+        .pipe(visTest.test({
+          // configuration params
         }));
     });
 
 ## Console report
+
+    > gulp test:visual
 
 ![](pictures/console-report.png)
 
@@ -331,61 +461,81 @@ open gemini-report/index.html
 
 <!-- todo: more about human friendlt report -->
 
-## The development flow
+## The dev flow
 {: .shout }
 
 ## When refactoring
 
 ### Test particular component
-```
-> gulp test:visual --section 7.3.4 --section 8.5
-```
+
+    > gulp test:visual --section 7.3.4 --section 8.5
 
 ### Test all
-```
-> gulp test:visual
-```
+
+    > gulp test:visual
 
 ## When making new
 
 ### Update one component refence
 
-```
-> gulp test:visual:update --section 8.5 --from local
-```
+    > gulp test:visual:update --section 8.5 --from local
 
 ### Update all from production
-```
-> gulp test:visual:update
-```
 
-## Real life examples of usage
+    > gulp test:visual:update
 
-1. Missing icon font <span class="next">(sad story)</span>
-1. Changing font linking
-1. Typograhy affection
-1. ...
+## Real life stories
+{: .real-life }
 
-## Apply for:
+* Missing icon font <span class="next sad">(sad but true)</span>
+* Changing font linking
+* Typograhy affection
+* Refactoring of atom components
+
+<style>
+.real-life .sad {
+    font: 32px/1.4 'Lora',sans-serif;
+    color: #ef4942;
+    font-style: italic;
+}
+</style>
+
+## Apply for
 The practises you did not dare to use
 
-1. Continious intergration
-1. Continious deployment
-1. Removing code
+* Continious intergration
+* Continious deployment
+* Removing code
+* Intensive refactoring
 
 ## Psycology
 {: .shout}
 
-## Insuarance
+## Insurance
+{: .insurance }
 
-Devs must be accurate but nothing checks the result. Code review does not help, it
-is also made by a human.
+Devs must be accurate but nothing checks the result.<br/><span class="nono next">No, code reviews don't.</span>
 
-###With visual regression testing
+<div class="next" markdown="1">
+###But visual regression testing does!
+{: .yesyes }
 
-* We feel safier
-* We are bravier
+* We feel safer
+* We are braver
 * Even a junior dev can experiment
+</div>
+
+<style>
+.insurance .nono,
+.insurance .yesyes {
+    font: 32px/1.4 'Lora',sans-serif;
+    color: #ef4942;
+    font-style: italic;
+}
+.insurance .yesyes {
+    color: green;
+}
+</style>
 
 ## Business
 {: .shout}
@@ -403,11 +553,37 @@ is also made by a human.
 
 * Trying out different diff comparing tools
 * Different window sizes<br/>
-  aka, desktop, tablet, mobile
+  * desktop, tablet, mobile
 * Post in SC5 blog
 * Open source
 
-## Materials
-{: .shout}
+## THANK YOU!
+{: .thanks }
 
-## Final slide
+Varya Stepanova, SC5 Online<br/>
+[@varya_en](https://twitter.com/varya_en){: .twitter }
+
+###[github://sc5/sc5-styleguide-visualtest](https://github.com/SC5/sc5-styleguide-visualtest)
+
+<style>
+.thanks h3 {
+  font-size: 50px;
+}
+.thanks .twitter
+{
+  text-decoration: none;
+  color: currentColor;
+  background: none;
+}
+.thanks .twitter::before
+{
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background-image:url('pictures/twitter-logo.png');
+  background-size: cover;
+  margin-right: 0.5em;
+  margin-bottom: -0.5em;
+}
+</style>
