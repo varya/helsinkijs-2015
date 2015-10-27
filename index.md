@@ -178,7 +178,7 @@ style: |
 ## Customer context
 {: .customer-context }
 
-###Does my website makes sense for the customer right now?
+###Does my website make sense for the customer right now?
 {: .question }
 
 <style>
@@ -253,7 +253,7 @@ style: |
 
 ![](pictures/margin-shift/chrome~diff.png){: .pic }
 
-## Impressive <span class="next useless">And useless<span>
+## Impressive <span class="next useless">&&nbsp;useless<span>
 {: .shout .impressive}
 
 <style>
@@ -405,7 +405,7 @@ Informative and easily navigable live style guide which
 }
 </style>
 
-## The package
+## Add on
 {: .shout}
 
 ## SC5 Style Guide addition
@@ -564,7 +564,7 @@ Devs must be accurate but nothing checks the result.<br/><span class="nono next"
 * Provide very stable UI
 * Work faster and do more
 
-## The way to go
+## The way to&nbsp;go
 {: .shout}
 
 ## Future plans and so on
