@@ -103,7 +103,7 @@ style: |
 #Cover .sub {
   color: #ef4942;
   display: block;
-  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  text-shadow: -3px -1px 4px white, 3px 3px 4px white, 2px 4px 3px rgba(0,0,0,0.5);
   text-align: center;
   font-size: 60px;
   font-family: 'Lora',sans-serif;
