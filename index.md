@@ -374,16 +374,16 @@ gives better understanding of what actually happened.
 }
 </style>
 
-## Pictorial pull request
-{: .pull-request }
+## How to make it work
+{: .make-do }
 
-![](pictures/pull-request.png){: .pic }
+Make developers create separate page for every single component,
+write tests for every component and introduce infrastructure.
+
+![](pictures/do-what-they-want.png){: .image .next }
 
 <style>
-.pull-request>div {
-    overflow-y: scroll;
-}
-.pull-request .pic {
+.make-do .image {
     width: 100%;
 }
 </style>
@@ -394,10 +394,19 @@ gives better understanding of what actually happened.
 Informative and easily navigable live style guide which
 **renders every component separately**.
 
+### Example: [varya.me/styleguide](http://varya.me/styleguide/#/)
+{: .example }
+
 ### Wonderful for perceptual diffs!
 {: .wonderful .next }
 
 <style>
+
+.style-guide .example {
+    font-size: 38px;
+    margin-bottom: 1em;
+}
+
 .style-guide .wonderful {
     font: 52px/1.4 'Lora',sans-serif;
     color: #ef4942;
@@ -479,6 +488,12 @@ open gemini-report/index.html
 
 <!-- todo: more about human friendlt report -->
 
+## Features
+
+* Out-of-box solution
+* One embedded test suitable for all the components
+* Optional custom tests with interactions and logic
+
 ## The dev flow
 {: .shout }
 
@@ -526,6 +541,21 @@ The practises you did not dare to use
 * Removing code
 * Intensive refactoring
 
+## Pictorial pull request
+{: .pull-request }
+
+![](pictures/pull-request.png){: .pic }
+
+<style>
+.pull-request>div {
+    overflow-y: scroll;
+}
+.pull-request .pic {
+    width: 100%;
+}
+</style>
+
+
 ## Psycology
 {: .shout}
 
@@ -560,20 +590,9 @@ Devs must be accurate but nothing checks the result.<br/><span class="nono next"
 
 ## Making money out of it
 
-* Sell style guide approach and tool
+* Introduce style guide approach
 * Provide very stable UI
 * Work faster and do more
-
-## The way to&nbsp;go
-{: .shout}
-
-## Future plans and so on
-
-* Trying out different diff comparing tools
-* Different window sizes<br/>
-  * desktop, tablet, mobile
-* Post in SC5 blog
-* Open source
 
 ## THANK YOU!
 {: .thanks }
@@ -581,11 +600,16 @@ Devs must be accurate but nothing checks the result.<br/><span class="nono next"
 Varya Stepanova, SC5 Online<br/>
 [@varya_en](https://twitter.com/varya_en){: .twitter }
 
-###[github://sc5/sc5-styleguide-visualtest](https://github.com/SC5/sc5-styleguide-visualtest)
+### The tool: [github.com/sc5/sc5-styleguide-visualtest](https://github.com/SC5/sc5-styleguide-visualtest)
+
+### Working code: [github.com/varya/varya.github.com](http://git.io/visual-tests-demo)
+
+###Slides: [varya.me/helsinkijs-2015](http://varya.me/helsinkijs-2015/)
 
 <style>
 .thanks h3 {
-  font-size: 50px;
+  font-size: 38px;
+  margin-bottom: 0.5em;
 }
 .thanks .twitter
 {
