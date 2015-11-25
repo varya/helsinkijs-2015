@@ -190,6 +190,24 @@ style: |
 </style>
 
 ## Spot the difference
+{: .before-after .prod-dev }
+
+### Old version
+{: .before }
+
+### New version
+{: .after }
+
+![](pictures/idea-example/chrome~ref.png){: .before }
+![](pictures/idea-example/chrome~current.png){: .after }
+
+<style>
+.prod-dev h3 {
+    display: inline-block;
+}
+</style>
+
+## Spot the difference
 
 ![](pictures/spot-difference.png)
 
