@@ -512,6 +512,13 @@ open gemini-report/index.html
 * One embedded test suitable for all the components
 * Optional custom tests with interactions and logic
 
+## Custom tests
+
+* Ignore dynamic parts
+* Wait for element to appear
+* Make interactions (e.g. clicks)
+* Run custom JavaScript
+
 ## The dev flow
 {: .shout }
 
