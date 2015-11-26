@@ -284,8 +284,6 @@ style: |
 Visual regression testing not for whole pages but for isolated components
 gives better understanding of what actually happened.
 
-<!-- todo: formulate better -->
-
 ## Button sizes
 
 ![](pictures/atomic-diffs/button-size/chrome~ref.png)
@@ -536,7 +534,7 @@ open gemini-report/index.html
 
 ## When making new
 
-### Update one component refence
+### Update one component reference
 
     > gulp test:visual:update --section 8.5 --from local
 
@@ -549,7 +547,7 @@ open gemini-report/index.html
 
 * Missing icon font <span class="next sad">(sad but true)</span>
 * Changing font linking
-* Typograhy affection
+* Typography affection
 * Refactoring of atom components
 
 <style>
@@ -563,8 +561,8 @@ open gemini-report/index.html
 ## Apply for
 The practises you did not dare to use
 
-* Continious intergration
-* Continious deployment
+* Continuous integration
+* Continuous deployment
 * Removing code
 * Intensive refactoring
 
@@ -583,7 +581,7 @@ The practises you did not dare to use
 </style>
 
 
-## Psycology
+## Psychology
 {: .shout}
 
 ## Insurance
