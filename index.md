@@ -395,8 +395,9 @@ gives better understanding of what actually happened.
 ## How to make it work
 {: .make-do }
 
-Make developers create separate page for every single component,
-write tests for every component and introduce infrastructure.
+Developers make a separate page for every single component,
+fix them every time they change code,
+write tests for each and make testing infrastructure.
 
 ![](pictures/do-what-they-want.png){: .image .next }
 
@@ -514,6 +515,7 @@ open gemini-report/index.html
 
 ## Custom tests
 
+* Different screen sizes
 * Ignore dynamic parts
 * Wait for element to appear
 * Make interactions (e.g. clicks)
